@@ -1,0 +1,36 @@
+#VRML_SIM R2020a utf8
+WorldInfo {
+}
+Viewpoint {
+  orientation 0.7289485741981019 0.6511192633227681 0.2113709561519035 5.4173087289350335
+  position -0.7083997158627255 1.1788678673443413 1.0356675691531232
+}
+Background {
+  skyColor [
+    0.4 0.7 1
+  ]
+}
+DirectionalLight {
+  ambientIntensity 1
+  direction 0.1 -0.5 0.3
+}
+RectangleArena {
+}
+Solid {
+  rotation 0.8988103011642299 0.08877218286467438 -0.42925463546769926 2.663702143617417
+  children [
+    DEF Ball Shape {
+      appearance PBRAppearance {
+        baseColor 0.0784314 0.32549 0.901961
+        roughness 1
+        metalness 0
+      }
+      geometry Sphere {
+        radius 0.1
+      }
+    }
+  ]
+  boundingObject USE Ball
+  physics Physics {
+  }
+}
