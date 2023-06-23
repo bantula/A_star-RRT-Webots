@@ -1,0 +1,482 @@
+#VRML_SIM R2020a utf8
+WorldInfo {
+}
+Viewpoint {
+  orientation -0.9996416969298707 -0.02394993684535485 -0.011953170469466833 1.3035436608187208
+  position 1.6959158942884633 7.820736261182747 4.408659613649082
+}
+TexturedBackground {
+}
+TexturedBackgroundLight {
+}
+RectangleArena {
+  translation 2.125 0 2.125
+  floorSize 4.75 4.75
+}
+Wall {
+  translation 1.625 0 3.74
+  rotation 0 1 0 1.01503e-06
+  name "wall(6)"
+  size 0.25 0.25 0.0625
+}
+Wall {
+  translation 0.985 0 3.36
+  rotation 0 1 0 -1.5707953071795862
+  name "wall(28)"
+  size 0.25 0.25 0.0625
+}
+Wall {
+  translation 1.755 0 3.63
+  rotation 0 1 0 -1.5707953071795862
+  name "wall(7)"
+  size 0.25 0.25 0.0625
+}
+Wall {
+  translation 2.255 0 3.63
+  rotation 0 1 0 -1.5707953071795862
+  name "wall(17)"
+  size 0.25 0.25 0.0625
+}
+Wall {
+  translation 2.755 0 3.38
+  rotation 0 1 0 -1.5707953071795862
+  name "wall(50)"
+  size 0.25 0.25 0.0625
+}
+Wall {
+  translation 0.76 0 3.47
+  rotation 0 1 0 -1.5707953071795862
+  name "wall(27)"
+  size 0.0625 0.25 0.5
+}
+Wall {
+  translation 0.515 0 3.36
+  rotation 0 1 0 -1.5707953071795862
+  name "wall(15)"
+  size 0.25 0.25 0.0625
+}
+Wall {
+  translation 0.265 0 4.14
+  rotation 0 1 0 -1.5707953071795862
+  name "wall(13)"
+  size 0.25 0.25 0.0625
+}
+Wall {
+  translation 0.375 0 4.24
+  rotation 0 1 0 1.01503e-06
+  name "wall(11)"
+  size 0.25 0.25 0.0625
+}
+Wall {
+  translation 0.5 0 1
+  rotation 0 1 0 -1.5707953071795862
+  name "wall(12)"
+  size 0.0625 0.25 0.5
+}
+Wall {
+  translation 0 0 1
+  name "wall(9)"
+  size 0.5 0.25 0.0625
+}
+Wall {
+  translation 1.25 0 0.39
+  name "wall(4)"
+  size 0.0625 0.25 0.425
+}
+Wall {
+  translation -0.105 0 1.5
+  rotation 0 1 0 1.01503e-06
+  name "wall(1)"
+  size 0.25 0.25 0.0625
+}
+Wall {
+  translation 2.635 0 1.01
+  rotation 0 1 0 1.01503e-06
+  name "wall(33)"
+  size 0.25 0.25 0.0625
+}
+Wall {
+  translation 2.635 0 2.73
+  rotation 0 1 0 1.01503e-06
+  name "wall(39)"
+  size 0.25 0.25 0.0625
+}
+Wall {
+  translation 1.625 0 2.48
+  rotation 0 1 0 1.01503e-06
+  name "wall(23)"
+  size 0.25 0.25 0.0625
+}
+Wall {
+  translation 0.625 0 2.74
+  rotation 0 1 0 1.01503e-06
+  name "wall(35)"
+  size 0.25 0.25 0.0625
+}
+Robot {
+  translation 0.25 -0.000185477 0.25
+  children [
+    HingeJoint {
+      jointParameters HingeJointParameters {
+        anchor -0.045 0.025 0
+      }
+      device [
+        RotationalMotor {
+          name "motor_2"
+        }
+        PositionSensor {
+          name "ps_2"
+        }
+      ]
+      endPoint Solid {
+        translation -0.045 0.025 0
+        rotation -4.908493704946863e-18 0 1 1.57
+        children [
+          DEF Wheel Shape {
+            appearance PBRAppearance {
+              baseColor 1 0 0
+              roughness 1
+              metalness 0
+            }
+            geometry Cylinder {
+              height 0.01
+              radius 0.025
+            }
+          }
+        ]
+        name "solid(1)"
+        boundingObject USE Wheel
+        physics DEF wheel_physics Physics {
+        }
+      }
+    }
+    DEF Body Transform {
+      translation 0 0.0415 0
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0 0 1
+            roughness 1
+            metalness 0
+          }
+          geometry Cylinder {
+            height 0.08
+            radius 0.045
+          }
+        }
+      ]
+    }
+    HingeJoint {
+      jointParameters HingeJointParameters {
+        anchor 0.045 0.025 0
+      }
+      device [
+        RotationalMotor {
+          name "motor_1"
+        }
+        PositionSensor {
+          name "ps_1"
+        }
+      ]
+      endPoint Solid {
+        translation 0.045 0.025 0
+        rotation 7.85358992791498e-17 3.92679496395749e-17 1 1.57
+        children [
+          DEF Wheel Shape {
+            appearance PBRAppearance {
+              baseColor 1 0 0
+              roughness 1
+              metalness 0
+            }
+            geometry Cylinder {
+              height 0.01
+              radius 0.025
+            }
+          }
+        ]
+        boundingObject USE Wheel
+        physics DEF wheel_physics Physics {
+        }
+      }
+    }
+    GPS {
+      children [
+        Solid {
+          children [
+            Shape {
+              appearance PBRAppearance {
+                roughness 1
+                metalness 0
+              }
+              geometry Cylinder {
+                height 0.1
+                radius 0.01
+              }
+            }
+          ]
+          boundingObject USE Body
+        }
+      ]
+    }
+  ]
+  boundingObject USE Body
+  physics Physics {
+  }
+  controller "glavni_controller"
+}
+Wall {
+  translation 0.735 0 2.87
+  rotation 0 1 0 -1.5707953071795862
+  name "wall(26)"
+  size 0.25 0.25 0.0625
+}
+Wall {
+  translation 1.745 0 2.61
+  rotation 0 1 0 -1.5707953071795862
+  name "wall(36)"
+  size 0.25 0.25 0.0625
+}
+Wall {
+  translation 0.405 0 2.47
+  rotation 0 1 0 1.01503e-06
+  name "wall(25)"
+  size 0.25 0.25 0.0625
+}
+Wall {
+  translation 0.505 0 2.62
+  rotation 0 1 0 -1.5707953071795862
+  name "wall(24)"
+  size 0.25 0.25 0.0625
+}
+Wall {
+  translation 1.505 0 2.35
+  rotation 0 1 0 -1.5707953071795862
+  name "wall(34)"
+  size 0.25 0.25 0.0625
+}
+Wall {
+  translation 1.25 0 2.25
+  rotation 0 1 0 -1.5707953071795862
+  name "wall(22)"
+  size 0.0625 0.25 0.5
+}
+Wall {
+  translation 0.76 0 -0.135
+  rotation 0 1 0 -1.5707953071795862
+  name "wall(21)"
+  size 0.25 0.25 0.0625
+}
+Wall {
+  translation 3.26 0 -0.135
+  rotation 0 1 0 -1.5707953071795862
+  name "wall(56)"
+  size 0.25 0.25 0.0625
+}
+Wall {
+  translation 3.26 0 0.615
+  rotation 0 1 0 -1.5707953071795862
+  name "wall(57)"
+  size 0.25 0.25 0.0625
+}
+Wall {
+  translation 3.76 0 0.615
+  rotation 0 1 0 -1.5707953071795862
+  name "wall(59)"
+  size 0.25 0.25 0.0625
+}
+Wall {
+  translation 3.51 0 0.865
+  rotation 0 1 0 -1.5707953071795862
+  name "wall(60)"
+  size 0.25 0.25 0.0625
+}
+Wall {
+  translation 3.27 0 3.385
+  rotation 0 1 0 -1.5707953071795862
+  name "wall(29)"
+  size 0.25 0.25 0.0625
+}
+Wall {
+  translation 3.75 0 3.855
+  rotation 0 1 0 -1.5707953071795862
+  name "wall(55)"
+  size 0.25 0.25 0.0625
+}
+Wall {
+  translation 3.49 0 2.355
+  rotation 0 1 0 -1.5707953071795862
+  name "wall(45)"
+  size 0.25 0.25 0.0625
+}
+Wall {
+  translation 2.52 0 1.115
+  rotation 0 1 0 -1.5707953071795862
+  name "wall(32)"
+  size 0.25 0.25 0.0625
+}
+Wall {
+  translation 2.27 0 2.115
+  rotation 0 1 0 -1.5707953071795862
+  name "wall(38)"
+  size 0.25 0.25 0.0625
+}
+Wall {
+  translation 1 0 1.5
+  rotation 0 1 0 -1.5707953071795862
+  name "wall(10)"
+  size 0.0625 0.25 0.5
+}
+Wall {
+  translation 1 0 1.78
+  rotation 0 1 0 1.01503e-06
+  name "wall(14)"
+  size 0.0625 0.25 0.5
+}
+Wall {
+  translation 2.74 0 2.47
+  rotation 0 1 0 1.01503e-06
+  name "wall(40)"
+  size 0.0625 0.25 0.5
+}
+Wall {
+  translation 2.74 0 1.98
+  rotation 0 1 0 1.01503e-06
+  name "wall(41)"
+  size 0.0625 0.25 0.5
+}
+Wall {
+  translation 3.49 0 1.98
+  rotation 0 1 0 1.01503e-06
+  name "wall(44)"
+  size 0.0625 0.25 0.5
+}
+Wall {
+  translation 2.98 0 1.75
+  rotation 0 1 0 -1.5707953071795862
+  name "wall(42)"
+  size 0.0625 0.25 0.5
+}
+Wall {
+  translation 2.98 0 3.27
+  rotation 0 1 0 -1.5707953071795862
+  name "wall(51)"
+  size 0.0625 0.25 0.5
+}
+Wall {
+  translation 3.01 0 3.96
+  rotation 0 1 0 -1.5707953071795862
+  name "wall(53)"
+  size 0.0625 0.25 0.5
+}
+Wall {
+  translation 3.28 0 1.75
+  rotation 0 1 0 -1.5707953071795862
+  name "wall(43)"
+  size 0.0625 0.25 0.5
+}
+Wall {
+  translation 3.28 0 3.27
+  rotation 0 1 0 -1.5707953071795862
+  name "wall(52)"
+  size 0.0625 0.25 0.5
+}
+Wall {
+  translation 3.51 0 3.96
+  rotation 0 1 0 -1.5707953071795862
+  name "wall(54)"
+  size 0.0625 0.25 0.5
+}
+Wall {
+  translation 3.73 0 2
+  rotation 0 1 0 -1.5707953071795862
+  name "wall(46)"
+  size 0.0625 0.25 0.5
+}
+Wall {
+  translation 4.23 0 2
+  rotation 0 1 0 -1.5707953071795862
+  name "wall(47)"
+  size 0.0625 0.25 0.5
+}
+Wall {
+  translation 4.23 0 2.75
+  rotation 0 1 0 -1.5707953071795862
+  name "wall(48)"
+  size 0.0625 0.25 0.5
+}
+Wall {
+  translation 0.53 0 0.875
+  rotation 0 1 0 -1.5707953071795862
+  name "wall(2)"
+  size 0.25 0.25 0.0625
+}
+Wall {
+  translation 1 0 2.155
+  rotation 0 1 0 -1.5707953071795862
+  name "wall(5)"
+  size 0.25 0.25 0.0625
+}
+Wall {
+  translation 1.25 0 0.81
+  name "wall(20)"
+  size 0.0625 0.25 0.425
+}
+Wall {
+  translation 1.25 0 -0.03
+  name "wall(3)"
+  size 0.0625 0.25 0.425
+}
+Wall {
+  translation 1.5 0 3.97
+  rotation 0 1 0 -1.5707953071795862
+  name "wall(19)"
+  size 0.55 0.25 0.0625
+}
+Wall {
+  translation 2.25 0 3.97
+  rotation 0 1 0 -1.5707953071795862
+  name "wall(8)"
+  size 0.55 0.25 0.0625
+}
+Wall {
+  translation 2.75 0 3.72
+  rotation 0 1 0 -1.5707953071795862
+  name "wall(49)"
+  size 0.55 0.25 0.0625
+}
+Wall {
+  translation 2.75 0 5.19723e-15
+  rotation 0 1 0 -1.5707953071795862
+  name "wall(18)"
+  size 0.55 0.25 0.0625
+}
+Wall {
+  translation 2.01 0 0.47
+  rotation 0 1 0 1.01503e-06
+  name "wall(30)"
+  size 0.55 0.25 0.0625
+}
+Wall {
+  translation 3.51 0 0.71
+  rotation 0 1 0 1.01503e-06
+  name "wall(58)"
+  size 0.55 0.25 0.0625
+}
+Wall {
+  translation 2.26 0 1.22
+  rotation 0 1 0 1.01503e-06
+  name "wall(31)"
+  size 0.55 0.25 0.0625
+}
+Wall {
+  translation 2.01 0 2.02
+  rotation 0 1 0 1.01503e-06
+  name "wall(37)"
+  size 0.55 0.25 0.0625
+}
+Wall {
+  translation 0.25 0 2.25
+  rotation 0 1 0 -1.5707953071795862
+  name "wall(16)"
+  size 0.5 0.25 0.0625
+}

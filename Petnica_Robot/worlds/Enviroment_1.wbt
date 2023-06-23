@@ -1,0 +1,227 @@
+#VRML_SIM R2020a utf8
+WorldInfo {
+}
+Viewpoint {
+  orientation -0.9999312553033957 0.005018589508533884 0.010597095201994802 1.4543754712051276
+  position 1.346893668046236 6.026441954152354 2.290690383654408
+}
+TexturedBackground {
+}
+TexturedBackgroundLight {
+}
+Wall {
+  translation -0.22 0 0
+  name "wall(14)"
+  size 0.0625 0.25 0.425
+}
+Wall {
+  translation 2.29 0 1.25
+  name "wall(13)"
+  size 0.0625 0.25 0.425
+}
+Wall {
+  translation 1.03 0 1.25
+  name "wall(12)"
+  size 0.0625 0.25 0.425
+}
+Wall {
+  translation 2.51 0 1
+  name "wall(11)"
+  size 0.5 0.25 0.0625
+}
+Wall {
+  translation 1.25 0 1
+  name "wall(10)"
+  size 0.5 0.25 0.0625
+}
+Wall {
+  translation 0 0 1
+  name "wall(9)"
+  size 0.5 0.25 0.0625
+}
+Wall {
+  translation 2.5 0 -0.25
+  rotation 1 0 0 0
+  name "wall(6)"
+  size 0.5 0.25 0.0625
+}
+Wall {
+  translation 2.72 0 0
+  name "wall(8)"
+  size 0.0625 0.25 0.425
+}
+Wall {
+  translation 2.29 0 0
+  name "wall(7)"
+  size 0.0625 0.25 0.425
+}
+Wall {
+  translation 1.47 0 0
+  name "wall(5)"
+  size 0.0625 0.25 0.425
+}
+Wall {
+  translation 1.03 0 0
+  name "wall(4)"
+  size 0.0625 0.25 0.425
+}
+Wall {
+  translation 1.25 0 -0.25
+  name "wall(3)"
+  size 0.5 0.25 0.0625
+}
+Wall {
+  translation 0.22 0 0
+  name "wall(2)"
+  size 0.0625 0.25 0.425
+}
+Wall {
+  translation 0 0 -0.25
+  name "wall(1)"
+  size 0.5 0.25 0.0625
+}
+Robot {
+  children [
+    HingeJoint {
+      jointParameters HingeJointParameters {
+        anchor -0.045 0.025 0
+      }
+      device [
+        RotationalMotor {
+          name "motor_2"
+        }
+        PositionSensor {
+          name "ps_2"
+        }
+      ]
+      endPoint Solid {
+        translation -0.045 0.025 0
+        rotation 0 0 1 1.57
+        children [
+          DEF Wheel Shape {
+            appearance PBRAppearance {
+              baseColor 1 0 0
+              roughness 1
+              metalness 0
+            }
+            geometry Cylinder {
+              height 0.01
+              radius 0.025
+            }
+          }
+        ]
+        name "solid(1)"
+        boundingObject USE Wheel
+        physics DEF wheel_physics Physics {
+        }
+      }
+    }
+    DEF Body Transform {
+      translation 0 0.0415 0
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0 0 1
+            roughness 1
+            metalness 0
+          }
+          geometry Cylinder {
+            height 0.08
+            radius 0.045
+          }
+        }
+      ]
+    }
+    HingeJoint {
+      jointParameters HingeJointParameters {
+        anchor 0.045 0.025 0
+      }
+      device [
+        RotationalMotor {
+          name "motor_1"
+        }
+        PositionSensor {
+          name "ps_1"
+        }
+      ]
+      endPoint Solid {
+        translation 0.045 0.025 0
+        rotation 0 0 1 1.57
+        children [
+          DEF Wheel Shape {
+            appearance PBRAppearance {
+              baseColor 1 0 0
+              roughness 1
+              metalness 0
+            }
+            geometry Cylinder {
+              height 0.01
+              radius 0.025
+            }
+          }
+        ]
+        boundingObject USE Wheel
+        physics DEF wheel_physics Physics {
+        }
+      }
+    }
+    GPS {
+      children [
+        Solid {
+          children [
+            Shape {
+              appearance PBRAppearance {
+                roughness 1
+                metalness 0
+              }
+              geometry Cylinder {
+                height 0.1
+                radius 0.01
+              }
+            }
+          ]
+          boundingObject USE Body
+        }
+      ]
+    }
+  ]
+  boundingObject USE Body
+  physics Physics {
+  }
+  controller "glavni_controller"
+}
+Wall {
+  translation -0.22 0 1.25
+  size 0.0625 0.25 0.425
+}
+RectangleArena {
+  translation 1.5 0 1.5
+  floorSize 4 4
+}
+Wall {
+  translation 1.25 0 2.75
+  name "wall(19)"
+  size 0.5 0.25 0.0625
+}
+Wall {
+  translation 2.5 0 3
+  name "wall(18)"
+  size 0.5 0.25 0.0625
+}
+Wall {
+  translation 2.5 0 2.5
+  name "wall(17)"
+  size 0.5 0.25 0.0625
+}
+Wall {
+  translation 0.25 0 2.75
+  rotation 0 1 0 -1.5707953071795862
+  name "wall(16)"
+  size 0.5 0.25 0.0625
+}
+Wall {
+  translation -0.25 0 2.75
+  rotation 0 1 0 -1.5707953071795862
+  name "wall(15)"
+  size 0.5 0.25 0.0625
+}
