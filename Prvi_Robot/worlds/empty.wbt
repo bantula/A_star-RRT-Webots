@@ -1,0 +1,219 @@
+#VRML_SIM R2020a utf8
+WorldInfo {
+}
+Viewpoint {
+  orientation 0.5698154574781187 -0.727991485324556 -0.3812331854835686 4.812840780901734
+  position 1.544640515608782 1.7939071253908079 0.8593215060808719
+}
+TexturedBackground {
+}
+TexturedBackgroundLight {
+}
+RectangleArena {
+  floorSize 5 5
+}
+Robot {
+  children [
+    HingeJoint {
+      jointParameters HingeJointParameters {
+        anchor -0.045 0.025 0
+      }
+      device [
+        RotationalMotor {
+          name "motor_2"
+        }
+        PositionSensor {
+          name "ps_2"
+        }
+      ]
+      endPoint Solid {
+        translation -0.045 0.025 0
+        rotation 0 0 1 1.57
+        children [
+          DEF Wheel Shape {
+            appearance PBRAppearance {
+              baseColor 1 0 0
+              roughness 1
+              metalness 0
+            }
+            geometry Cylinder {
+              height 0.01
+              radius 0.025
+            }
+          }
+        ]
+        name "solid(1)"
+        boundingObject USE Wheel
+        physics DEF wheel_physics Physics {
+        }
+      }
+    }
+    DEF Body Transform {
+      translation 0 0.0415 0
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0 0 1
+            roughness 1
+            metalness 0
+          }
+          geometry Cylinder {
+            height 0.08
+            radius 0.045
+          }
+        }
+      ]
+    }
+    GPS {
+      boundingObject USE Body
+    }
+    HingeJoint {
+      jointParameters HingeJointParameters {
+        anchor 0.045 0.025 0
+      }
+      device [
+        RotationalMotor {
+          name "motor_1"
+        }
+        PositionSensor {
+          name "ps_1"
+        }
+      ]
+      endPoint Solid {
+        translation 0.045 0.025 0
+        rotation 0 0 1 1.57
+        children [
+          DEF Wheel Shape {
+            appearance PBRAppearance {
+              baseColor 1 0 0
+              roughness 1
+              metalness 0
+            }
+            geometry Cylinder {
+              height 0.01
+              radius 0.025
+            }
+          }
+        ]
+        boundingObject USE Wheel
+        physics DEF wheel_physics Physics {
+        }
+      }
+    }
+  ]
+  boundingObject USE Body
+  physics Physics {
+  }
+  controller "my_controller_1_C"
+}
+SolidBox {
+  translation 0 0.05 -0.25
+  size 0.25 0.1 0.125
+  appearance PBRAppearance {
+    baseColorMap ImageTexture {
+      url [
+        "textures/tagged_wall.jpg"
+      ]
+    }
+    roughness 1
+    metalness 0
+  }
+  physics Physics {
+  }
+}
+SolidBox {
+  translation 0.25 0.05 -0.25
+  name "box(2)"
+  size 0.125 0.1 0.125
+  appearance PBRAppearance {
+    baseColorMap ImageTexture {
+      url [
+        "textures/tagged_wall.jpg"
+      ]
+    }
+    roughness 1
+    metalness 0
+  }
+  physics Physics {
+  }
+}
+SolidBox {
+  translation -0.25 0.05 -0.25
+  name "box(1)"
+  size 0.25 0.1 0.125
+  appearance PBRAppearance {
+    baseColorMap ImageTexture {
+      url [
+        "textures/tagged_wall.jpg"
+      ]
+    }
+    roughness 1
+    metalness 0
+  }
+  physics Physics {
+  }
+}
+SolidBox {
+  translation 0.25 0.05 0.25
+  name "box(3)"
+  size 0.125 0.1 0.125
+  appearance PBRAppearance {
+    baseColorMap ImageTexture {
+      url [
+        "textures/tagged_wall.jpg"
+      ]
+    }
+    roughness 1
+    metalness 0
+  }
+  physics Physics {
+  }
+}
+SolidBox {
+  translation -0.25 0.05 0.25
+  name "box(5)"
+  size 0.25 0.1 0.125
+  appearance PBRAppearance {
+    baseColorMap ImageTexture {
+      url [
+        "textures/tagged_wall.jpg"
+      ]
+    }
+    roughness 1
+    metalness 0
+  }
+  physics Physics {
+  }
+}
+SolidBox {
+  translation 0 0.05 0.25
+  name "box(6)"
+  size 0.25 0.1 0.125
+  appearance PBRAppearance {
+    baseColorMap ImageTexture {
+      url [
+        "textures/tagged_wall.jpg"
+      ]
+    }
+    roughness 1
+    metalness 0
+  }
+  physics Physics {
+  }
+}
+SolidBox {
+  translation -0.25 0.05 0
+  name "box(4)"
+  size 0.125 0.1 0.375
+  appearance PBRAppearance {
+    baseColorMap ImageTexture {
+      url [
+        "textures/tagged_wall.jpg"
+      ]
+    }
+    roughness 1
+    metalness 0
+  }
+  physics Physics {
+  }
+}
